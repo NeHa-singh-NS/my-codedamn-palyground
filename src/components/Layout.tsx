@@ -5,7 +5,6 @@ import Terminal from "./Terminal";
 import Preview from "./Preview";
 import { Grid } from "@mui/material";
 import TerminalIcon from "@mui/icons-material/Terminal";
-import { Resizable } from "re-resizable";
 
 interface File {
   name: string;
@@ -149,7 +148,6 @@ const Layout: React.FC = () => {
           activeFileIndex={activeFileIndex}
           onFileSelect={setActiveFileIndex}
           onCodeChange={handleCodeChange}
-          executeCode={executeCode}
           onNewFile={createNewFile}
           onSaveFile={onSaveFile}
         />
@@ -171,9 +169,7 @@ const Layout: React.FC = () => {
               alignItems: "flex-end",
             }}
           />
-          <Resizable>
-            <Terminal />
-          </Resizable>
+          <Terminal />
         </Grid>
       </Grid>
     </Grid>

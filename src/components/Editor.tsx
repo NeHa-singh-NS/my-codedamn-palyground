@@ -25,7 +25,6 @@ interface EditorProps {
   onCodeChange: (index: number, newCode: string) => void;
   onNewFile: () => void;
   onSaveFile: () => void;
-  onConsoleOutput: (output: string) => void;
 }
 
 const CodeEditor: React.FC<EditorProps> = ({
@@ -35,7 +34,6 @@ const CodeEditor: React.FC<EditorProps> = ({
   onCodeChange,
   onNewFile,
   onSaveFile,
-  onConsoleOutput,
 }) => {
   const editorRef = useRef<any>();
   const [consoleOutput, setConsoleOutput] = useState<string>("");

@@ -4,6 +4,7 @@ import { Resizable } from "re-resizable";
 
 const XtermTerminal = () => {
   const terminalRef = useRef(null);
+  // @ts-ignore
   let terminal: Terminal | null = null;
 
   useEffect(() => {
@@ -11,7 +12,7 @@ const XtermTerminal = () => {
       // Dynamically import xterm and its addon
       const { Terminal } = await import("xterm");
       const { FitAddon } = await import("xterm-addon-fit");
-
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       terminal = new Terminal();
       const fitAddon = new FitAddon();
 
